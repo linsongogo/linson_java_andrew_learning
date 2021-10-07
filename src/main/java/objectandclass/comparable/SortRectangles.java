@@ -15,7 +15,6 @@ public class SortRectangles {
     Arrays.sort(rectangles);
     for (Rectangle rectangle : rectangles) {
       System.out.println(rectangle + " ");
-      System.out.println();
     }
   }
 }

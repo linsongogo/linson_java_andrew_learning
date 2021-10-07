@@ -26,6 +26,19 @@ public class House implements Cloneable, Comparable<House> {
     return whenBuilt;
   }
 
+  //shallow copy
+  /*
+  @Override
+  public Object clone() {
+    try {
+      return super.clone();
+    } catch (CloneNotSupportedException ex) {
+      return null;
+    }
+  }
+   */
+
+//deep copy
   @Override
   /** Override the protected clone method defined in
    the Object class, and strengthen its accessibility */

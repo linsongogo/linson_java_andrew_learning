@@ -19,7 +19,7 @@ public class SortComparableObjects {
     }
     System.out.println();
 
-    BigInteger[] hugeNumbers = {new BigInteger("2323231092923992"),
+    BigInteger[] hugeNumbers = {new BigInteger("232323109292"),
         new BigInteger("432232323239292"),
         new BigInteger("54623239292")};
     java.util.Arrays.sort(hugeNumbers);
