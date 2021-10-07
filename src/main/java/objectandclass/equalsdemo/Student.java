@@ -6,7 +6,6 @@ public class Student {
 
   private String firstName;
   private String lastName;
-
   private String score;
 
   public Student(String firstName, String lastName) {
@@ -37,6 +36,8 @@ public class Student {
   public void setScore(String score) {
     this.score = score;
   }
+
+
 
   @Override
   public boolean equals(Object o) {

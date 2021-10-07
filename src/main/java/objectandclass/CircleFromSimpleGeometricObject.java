@@ -57,10 +57,10 @@ public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
   public void printCircle() {
     System.out.println("The circle is created " + getDateCreated() +
         " and the radius is " + radius);
-    getDateCreated();//这里可以不加super关键字
+    super.getDateCreated();//这里可以不加super关键字
   }
 
-  @Override
+  @Override  //方法重写
   public String toString() {
     super.toString();//通过Super关键字调用父类toString方法
     return "CircleFromSimpleGeometricObject{" +

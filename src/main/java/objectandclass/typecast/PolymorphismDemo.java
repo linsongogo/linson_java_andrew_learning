@@ -10,12 +10,12 @@ public class PolymorphismDemo {
     m(new Person());
     m(new Object());
 
-    Object o1 = new Course("wrong");
-    Object o = new Student();//隐式转换 向上转换 upcasting
+    //Object o1 = new Course("wrong");
+    Object o = new Student(); //隐式转换 向上转换 upcasting
     m(o);
 
     //断点、debug、选中、右键、evaluate
-    if (o1 instanceof Student) {
+    if (o instanceof Student) {       //检测o是否指向student实例
       Student b = (Student) o;//显示转换 向下转换  downcasting
     }
 
