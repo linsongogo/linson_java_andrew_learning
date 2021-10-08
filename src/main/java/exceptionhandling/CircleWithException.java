@@ -56,7 +56,7 @@ public class CircleWithException {
   /**
    * Return the area of this circle
    */
-  public double findArea() {
+  public double getArea() {
     return radius * radius * 3.14159;
   }
 }

@@ -8,8 +8,8 @@ public class CheckedExceptionDemo {
 
   public static void main(String[] args) throws FileNotFoundException {
 
-    //免检异常 checked exception
-    //必检异常 unchecked exception
+    //必检异常 checked exception
+    //免检异常 unchecked exception
     File file = new File("E://file.txt");
     FileReader fr = new FileReader(file);
 
