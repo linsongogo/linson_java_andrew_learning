@@ -20,9 +20,9 @@ public class Queue {
     queue.clear();
     System.out.println("After clear size: " + queue); // []
 
-    //int int r = queue.poll();
+    //int  r = queue.poll();
     //System.out.println(r); // Exception 队列为空Null
 
-    queue.remove(); //NoSuchElementException extends RuntimeException 无需捕获
+    //queue.remove(); //NoSuchElementException extends RuntimeException 无需捕获
   }
 }

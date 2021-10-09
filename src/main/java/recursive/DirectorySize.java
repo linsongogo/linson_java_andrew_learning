@@ -18,11 +18,11 @@ public class DirectorySize {
   private static long getSize(File file) {
     long size = 0;
     if (file.isFile()) {
-      size = file.length();
+      size = file.length(); //定义BaseCase终止条件（是个文件）
     } else {
-      File[] files = file.listFiles();
+      File[] files = file.listFiles();   // 是文件夹，遍历，计算文件夹中所有文件大小，累加
       for (int i = 0; i < files.length; i++) {
-        size += getSize(files[i]);
+        size += getSize(files[i]);   // 递归（文件夹中既有文件夹又有文件）
       }
     }
     return size;

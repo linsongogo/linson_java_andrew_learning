@@ -9,7 +9,7 @@ public class RecursiveBinarySearch {
 
   public static void main(String[] args) {
     int[] array = {1, 2, 3, 4, 5, 6};
-    System.out.println(recursiveBinarySearch(array, -1));
+    System.out.println(recursiveBinarySearch(array,6));
   }
 
   public static int recursiveBinarySearch(int[] list, int key) {
