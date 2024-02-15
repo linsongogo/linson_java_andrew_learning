@@ -64,4 +64,8 @@ public class CircleWithPrivateDataFields {
   public double getArea() {
     return radius * radius * Math.PI;
   }
+
+  public void printnumberOfObjects(){
+    System.out.println(numberOfObjects);
+  }
 }

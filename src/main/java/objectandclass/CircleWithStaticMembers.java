@@ -30,11 +30,11 @@ public class CircleWithStaticMembers {
     /**
      * Return numberOfObjects
      */
-    //static int getNumberOfObjects() {
-        //getArea(); 静态方法不能引用实例方法
-        //System.out.println(radius); 静态变量不能引用实例变量
-    //    return numberOfObjects;
-    //}
+//    static int getNumberOfObjects() {
+//        getArea(); 静态方法不能引用实例方法
+//        System.out.println(radius); 静态变量不能引用实例变量
+//        return numberOfObjects;
+//    }
 
 
     public static int getNumberOfObjects() {
