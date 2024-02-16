@@ -3,8 +3,8 @@ package objectandclass;
 public class Course {
 
   private String courseName;
-  private String[] students = new String[100];
-  private int numberOfStudents;
+  private final String[] students = new String[100];
+  private int numberOfStudents = 0;
 
   public Course(String courseName) {
     this.courseName = courseName;

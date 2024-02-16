@@ -6,6 +6,7 @@ public class StringStudy4 {
 
     String a = "Welcome to Java";
     char[] charArray = a.toCharArray();
+    char[] cha = {'a','b'};
 
     for (char e : charArray) {
       System.out.println(e);
@@ -16,6 +17,9 @@ public class StringStudy4 {
 
     String c= String.valueOf(charArray);
     System.out.println(c);
+
+    String d= String.valueOf(cha);
+    System.out.println(d);
   }
 
 }

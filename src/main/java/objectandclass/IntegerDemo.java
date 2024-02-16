@@ -6,9 +6,9 @@ public class IntegerDemo {
     System.out.println(Integer.MAX_VALUE);
     System.out.println(Integer.MIN_VALUE);
 
-    System.out.println(new Integer(10).compareTo(new Integer(11)));
-    System.out.println(new Integer(10).compareTo(new Integer(10)));
-    System.out.println(new Integer(10).compareTo(new Integer(9)));
+    System.out.println(Integer.compare(10, 11));
+    System.out.println(Integer.compare(10, 10));
+    System.out.println(Integer.compare(10, 9));
 
     Integer o11 = Integer.valueOf("12");
     System.out.println(o11 == 12);
