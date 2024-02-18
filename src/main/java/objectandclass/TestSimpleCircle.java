@@ -36,7 +36,7 @@ class SimpleCircle {
 /*
   construct a circle with radius
 */
-
+  // 构造方法
   SimpleCircle() {
     radius = 1;
   }

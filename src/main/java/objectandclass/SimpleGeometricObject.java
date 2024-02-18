@@ -9,7 +9,7 @@ public class SimpleGeometricObject {
   /**
    * Construct a default geometric object
    */
-  public SimpleGeometricObject() {
+  SimpleGeometricObject() {
     dateCreated = new java.util.Date();
   }
 

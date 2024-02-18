@@ -58,6 +58,8 @@ public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
     System.out.println("The circle is created " + getDateCreated() +
         " and the radius is " + radius);
     super.getDateCreated();//这里可以不加super关键字
+    System.out.println(getDateCreated());
+    System.out.println(getColor());
   }
 
   @Override  //方法重写
