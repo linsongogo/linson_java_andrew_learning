@@ -54,6 +54,7 @@ public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
   }
 
   /* Print the circle info */
+
   public void printCircle() {
     System.out.println("The circle is created " + getDateCreated() +
         " and the radius is " + radius);
