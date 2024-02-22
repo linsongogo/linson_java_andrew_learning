@@ -8,7 +8,17 @@ public class PolymorphismDemo1 {
             m(new Object());
 
         }
-//动态绑定
+
+
+
+
+
+
+
+
+
+
+    //动态绑定
 public static void m(Object x) {
         System.out.println(x.toString());
         }
@@ -23,7 +33,7 @@ class Student1 extends Person1 {
     }
 }
 
-class Person1 extends Object {
+class Person1 {
     public String toString() {
         return "Person";
     }
