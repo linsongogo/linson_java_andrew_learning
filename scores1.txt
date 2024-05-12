@@ -1,2 +1,2 @@
-Andrew 90
-Eric 8
+Andrew Programming 90
+Eric 180
