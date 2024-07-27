@@ -8,7 +8,7 @@ public class TreeMapDemo {
 
   public static void main(String[] args) {
     //TreeMap 比较和排序（默认升序）；HashMap 效率更高
-    Map<Integer, String> treeMap = new TreeMap(new DescendingSorter());
+    Map<Integer, String> treeMap = new TreeMap<>(new DescendingSorter());
     treeMap.put(40000, "小张");
     treeMap.put(30000, "小李");
     treeMap.put(50000, "小赵");
@@ -57,6 +57,8 @@ class StudentScoreDescending implements Comparator<Student> {
   }
 }
 
+
+
 class Student {
 
   private int id;
@@ -90,10 +92,11 @@ class Student {
   @Override
   public String toString() {
     return "Student{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        ", score=" + score +
-        '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", score=" + score +
+            '}';
   }
+
 }
 

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class ArrayListDemo {
 
   public static void main(String[] args) {
-    List<String> arrayList = new ArrayList();
+    List<String> arrayList = new ArrayList<>();
     arrayList.add("a");
     arrayList.add("b");
     arrayList.add("c");

@@ -40,12 +40,14 @@ public class HashMapDemo {
         }
 
         incomeMap.put("小明",25000);
+        incomeMap.put("小张",27000);
+        incomeMap.put("小张",27700);
         System.out.println(incomeMap);
 
-        incomeMap.remove("小明");
-        System.out.println(incomeMap);
-        incomeMap.remove("小王",30000);
-        System.out.println(incomeMap);
+//        incomeMap.remove("小明");
+//        System.out.println(incomeMap);
+//        incomeMap.remove("小王",30000);
+//        System.out.println(incomeMap);
 
 
 

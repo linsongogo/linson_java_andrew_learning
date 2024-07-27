@@ -11,18 +11,21 @@ public class TaskThreadDemo {
     // Create tasks
     Runnable printA = new PrintChar('a', 100);
     Runnable printB = new PrintChar('b', 100);
-    Runnable print100 = new PrintNum(100);
+    PrintChar printChar = new PrintChar('s',20);
+    Runnable print100 = new PrintNum();
 
     // Create threads
     Thread thread1 = new Thread(printA);
     Thread thread2 = new Thread(printB);
     Thread thread3 = new Thread(print100);
+    Thread thread4 = new Thread(printChar);
 
-    thread3.setPriority(Thread.MAX_PRIORITY);//设置优先级（并非设置了优先级就先执行）
+    // thread3.setPriority(Thread.MAX_PRIORITY);//设置优先级（并非设置了优先级就先执行）
     // Start threads
-    thread1.start();
-    thread2.start();
+//    thread1.start();
+//    thread2.start();
     thread3.start();
+    thread4.start();
 
   }
 }
@@ -60,32 +63,35 @@ class PrintNum implements Runnable {
   /**
    * Construct a task for printing 1, 2, ... i
    */
-  public PrintNum(int n) {
-    lastNum = n;
-  }
+//  public PrintNum(int n) {
+//    lastNum = n;
+//  }
 
   @Override
   /** Tell the thread how to run */
   public void run() {
-    Thread thread4 = new Thread(new PrintChar('c', 40));
+    lastNum = 100;
+
+    Thread thread4 = new Thread(new PrintChar('c', 100));
     thread4.start();
 
-    try {
-      for (int i = 1; i <= lastNum; i++) {
-        System.out.print(" " + i);
-        Thread.yield(); //暂停
-        try {
-          Thread.sleep(100); //休眠  会抛出必检异常
-        } catch (InterruptedException e) {
-          e.printStackTrace();
+    for (int i = 1; i <= lastNum; i++) {
+      System.out.print(" " + i);
+//      Thread.yield(); //暂停
+//        try {
+//          Thread.sleep(100); //休眠  会抛出必检异常
+//        } catch (InterruptedException e) {
+//          e.printStackTrace();
+//        }
+//
+        if (i == 20) {
+//          thread4.start();
+          try {
+            thread4.join(); // 等待此线程结束  会抛出必检异常
+          } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+          }
         }
-
-        if (i == 50) {
-          thread4.join(); // 等待此线程结束  会抛出必检异常
-        }
-      }
-    } catch (InterruptedException e) {
-      e.printStackTrace();
     }
 
 

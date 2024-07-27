@@ -12,7 +12,7 @@ public class ExecutorDemo {
     // Submit runnable tasks to the executor
     executor.execute(new PrintChar('a', 100));
     executor.execute(new PrintChar('b', 100));
-    executor.execute(new PrintNum(100));
+    executor.execute(new PrintNum());
 
     System.out.println(" is shutdown:"+executor.isShutdown());
     // Shut down the executor

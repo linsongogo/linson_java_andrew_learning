@@ -1,13 +1,23 @@
 package unitTest;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 
 public class UnitTestDemo2Test {
     UnitTestDemo2 un = null;
+
+    @BeforeClass
+    public static void beforeClass(){
+        System.out.println("before class");
+    }
+
+    @AfterClass
+    public static void afterClass(){
+        System.out.println("after class");
+    }
+
+
 
     @Before
     public void beforeEveryTest() {
@@ -26,9 +36,11 @@ public class UnitTestDemo2Test {
         assertEquals(3,a);
 
 
+
     }
 
     @Test
     public void subb() {
+        assertEquals(3,un.subb(4,1));
     }
 }

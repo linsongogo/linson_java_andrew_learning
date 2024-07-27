@@ -6,7 +6,8 @@ import java.util.Set;
 
 public class LinkedHashSetDemo {
     public static void main(String[] args) {
-        Set<String> hashset = new LinkedHashSet();
+        Set<String> hashset = new HashSet<>();
+//        Set<String> hashset = new LinkedHashSet<>();
         hashset.add("one");
         hashset.add("two");
         hashset.add("three");

@@ -21,12 +21,13 @@ public class AbsTest {
 
   @Parameterized.Parameters
   public static Collection<Object[]> data() {
+
     return Arrays.asList(new Object[][]{{0, 0}, {1, 1}, {-1, 1}});
   }
 
   @Test
   public void testAbs() {
-    int r = Math.abs(this.input);
-    assertEquals(this.excepted, r);
+//    int r = Math.abs(this.input);
+    assertEquals(this.excepted, Math.abs(this.input));
   }
 }
