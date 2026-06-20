@@ -1,69 +1,52 @@
 package multithreading.latest;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /*
 The first thread prints the letter a 100 times.
 The second thread prints the letter b 100 times.
 The third thread prints the integers 1 through 100.
  */
-public class TaskThreadDemo {
-
-
+public class TaskThreadDemo1 {
 
   public static void main(String[] args) {
-    // Create tasks
-    Runnable printA = new PrintChar('a', 100);
-    Runnable printB = new PrintChar('b', 100);
-    PrintChar printChar = new PrintChar('s',20);
-    Runnable print100 = new PrintNum();
+    // Create a fixed thread pool with maximum three threads
+    ExecutorService executor = Executors.newFixedThreadPool(4);
 
-    System.out.println("n" + printChar.aaa);
-
+    // Submit runnable tasks to the executor
+    executor.execute(new PrintChar1('a', 100));
+    executor.execute(new PrintChar1('b', 100));
 
 
-    // Create threads
-    Thread thread1 = new Thread(printA);
-    Thread thread2 = new Thread(printB);
-    Thread thread3 = new Thread(print100);
-    Thread thread4 = new Thread(printChar);
 
-    thread3.setPriority(Thread.MAX_PRIORITY);//设置优先级（并非设置了优先级就先执行）
-    // Start threads
-    thread1.start();
-    thread2.start();
-    thread3.start();
-    thread4.start();
+    System.out.println(" is shutdown:"+executor.isShutdown());
+    // Shut down the executor
+    executor.shutdown();
+    System.out.println(" is shutdown:"+executor.isShutdown());
 
-        try {
-            thread4.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    System.out.println("m" + printChar.getaaa());
-
+    System.out.println(" is terminated:"+executor.isTerminated());
+    while (!executor.isTerminated()){
+    }
+    System.out.println(" is terminated:"+executor.isTerminated());
   }
 }
 
+
+
 // The task for printing a specified character in specified times
-class PrintChar implements Runnable {
+class PrintChar1 implements Runnable {
 
   private char charToPrint; // The character to print
   private int times; // The times to repeat
 
-  int aaa = 0;
   /**
    * Construct a task with specified character and number of times to print the character
    */
-  public PrintChar(char c, int t) {
+  public PrintChar1(char c, int t) {
     charToPrint = c;
     times = t;
   }
-
-  public int getaaa(){
-
-    return aaa;
-  }
-
 
   @Override
   /** Override the run() method to tell the system
@@ -71,15 +54,13 @@ class PrintChar implements Runnable {
    */
   public void run() {
     for (int i = 0; i < times; i++) {
-      aaa ++;
       System.out.print(charToPrint);
     }
-    System.out.println(aaa);
   }
 }
 
 // The task class for printing number from 1 to n for a given n
-class PrintNum implements Runnable {
+class PrintNum1 implements Runnable {
 
   private int lastNum;
 

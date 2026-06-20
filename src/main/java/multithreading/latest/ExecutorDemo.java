@@ -5,14 +5,18 @@ import java.util.concurrent.Executors;
 
 public class ExecutorDemo {
 
+
+
   public static void main(String[] args) {
     // Create a fixed thread pool with maximum three threads
-    ExecutorService executor = Executors.newFixedThreadPool(3);
+    ExecutorService executor = Executors.newFixedThreadPool(4);
+    ExecutorService executor1 = Executors.newFixedThreadPool(4);
 
     // Submit runnable tasks to the executor
     executor.execute(new PrintChar('a', 100));
     executor.execute(new PrintChar('b', 100));
-    executor.execute(new PrintNum());
+//    executor1.execute(new AddCount2());
+
 
     System.out.println(" is shutdown:"+executor.isShutdown());
     // Shut down the executor
@@ -23,6 +27,22 @@ public class ExecutorDemo {
     while (!executor.isTerminated()){
     }
     System.out.println(" is terminated:"+executor.isTerminated());
+
+
+
+class AddCount3 implements Runnable{
+
+  @Override
+  public void run() {
+    for (int i = 0; i<20; i++){
+      int count = i;
+    }
+
+  }
+}
+
+
+
 
 
 

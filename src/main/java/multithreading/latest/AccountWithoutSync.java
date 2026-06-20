@@ -8,7 +8,8 @@ public class AccountWithoutSync {
   private static Account account = new Account();
 
   public static void main(String[] args) {
-    ExecutorService executor = Executors.newCachedThreadPool();//创建线程池
+    // ExecutorService executor = Executors.newCachedThreadPool();//创建线程池
+    ExecutorService executor = Executors.newFixedThreadPool(4);
 
     // Create and launch 100 threads
     for (int i = 0; i < 100; i++) {
@@ -29,7 +30,7 @@ public class AccountWithoutSync {
 
     public void run() {
       //synchronized (account) {
-       account.deposit(1);
+       account.deposit(2);
       //}
     }
   }
